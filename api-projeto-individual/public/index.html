@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/be7ca57738.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Blog Universe</title>
+</head>
+
+
+<body>
+
+
+
+    <header>
+
+        <img class="img_logo" src="./imgs/logo-branco.png" alt="logo">
+        <ul class="lista_header">
+            <li>
+                <a class="link_lista_header" href="#cadastro">Receba novidades</a>
+            </li>
+            <li>
+                <a class="link_lista_header" href="">Análise de
+                    conteúdo</a>
+            </li>
+            <li>
+                <a class="link_lista_header" href="">Avaliações</a>
+            </li>
+        </ul>
+
+    </header>
+
+    <div class="container_introducao">
+        <div class="text_introducao">
+            <h1 class="titulo_introducao">O que você encontra por aqui?</h1>
+            <p class="paragrafo_introducao">O objetivo deste
+                projeto é explicar de forma lúdica e objetiva algumas
+                curiosidades sobre o nosso vasto universo, acredito que assim como eu, você
+                ja se fez algumas perguntas, de onde viemos? pra onde vamos? Estamos sozinhos?
+                então eis aqui algumas respostas. Infelizmente você vai sair daqui com mais dúvidas
+                do que quando chegou, mas coloque o cinto e aproveite a viagem! </p>
+
+        </div>
+    </div>
+
+
+    <div class="container_conteudo">
+
+        <div onclick="big_bang()" class="div_conteudo1" >
+            <img class="img_escolha_conteudo" src="./imgs/big3.jpg" onclick="interacao_big_bang()"><br>
+            <a class="link_texto_conteudo" href="#id_big_bang" onclick="interacao_big_bang()" >Big Bang</a>
+
+        </div>
+
+        <div class="div_conteudo" onclick="buraco_negro()" >
+            <img class="img_escolha_conteudo" src="./imgs/buraco7.jpg" onclick="interacao_buracos()"><br>
+            <a class="link_texto_conteudo" href="#id_buraco_negro" onclick="interacao_buracos()">Buracos negros</a>
+
+        </div>
+
+        <div class="div_conteudo" onclick="multiverso()">
+            <img class="img_escolha_conteudo" src="./imgs/multi1.jpeg" onclick="interacao_multiversos()"><br>
+            <a class="link_texto_conteudo" href="#id_multiverso" onclick="interacao_multiversos()"> Multiversos</a>
+
+        </div>
+
+        <div class="div_conteudo" onclick="Big_crunch()">
+            <img class="img_escolha_conteudo" src="./imgs/crunch2.jpg" onclick="interacao_crunch()"><br>
+            <a class="link_texto_conteudo" href="#id_big_crunch" onclick="interacao_crunch()" >Big Crunch</a><br>
+
+        </div>
+
+
+        <div class="container_grafico">
+            <div class="titulo_grafico">Conteúdos mais acesssados</div>
+            <div class="container_caixa_grafico">
+                <div class="caixa_grafico">
+                    <canvas class="grafico" id="grafico_coluna"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container_explicacao" id="id_big_bang">
+
+        <h1 class="titulo_explicacao">O que foi o big bang?</h1>
+
+        <div class="container_texto_explicacao">
+
+            <p class="paragrafo_explicacao">A busca pela compreensão sobre como foi desencadeado o processo que
+                originou o
+                universo atual, proporcionou – e ainda proporciona – vários debates, pesquisas e teorias que possam
+                explicar tal fenômeno. É um tema que desperta grande curiosidade dos humanos desde os tempos mais
+                remotos e gera grandes polêmicas, envolvendo conceitos religiosos, filosóficos e científicos.<br><br>
+
+                Até o momento, a explicação mais aceita sobre a origem do universo entre a comunidade cientifica é
+                baseada na teoria da Grande Explosão, em inglês, Big Bang. Ela apoia-se, em parte, na teoria da
+                relatividade do físico Albert Einstein (1879-1955) e nos estudos dos astrônomos Edwin Hubble (1889-1953)
+                e Milton Humason (1891-1972), os quais demonstraram que o universo não é estático e se encontra em
+                constante expansão, ou seja, as galáxias estão se afastando umas das outras. Portanto, no passado elas
+                deveriam estar mais próximas que hoje, e, até mesmo, formando um único ponto.<br><br>
+
+                A teoria do Big Bang foi anunciada em 1948 pelo cientista russo naturalizado estadunidense, George Gamow
+                (1904-1968) e o padre e astrônomo belga Georges Lemaître (1894-1966). Segundo eles, o universo teria
+                surgido após uma grande explosão cósmica, entre 10 e 20 bilhões de anos atrás. O termo explosão
+                refere-se a uma grande liberação de energia, criando o espaço-tempo.<br><br>
+
+                Até então, havia uma mistura de partículas subatômicas (qharks, elétrons, neutrinos e suas partículas)
+                que se moviam em todos os sentidos com velocidades próximas à da luz. As primeiras partículas pesadas,
+                prótons e nêutrons, associaram-se para formarem os núcleos de átomos leves, como hidrogênio, hélio e
+                lítio, que estão entre os principais elementos químicos do universo.<br><br>
+
+                Ao expandir-se, o universo também se resfriou, passando da cor violeta à amarela, depois laranja e
+                vermelha. Cerca de 1 milhão de anos após o instante inicial, a matéria e a radiação luminosa se
+                separaram e o Universo tornou-se transparente: com a união dos elétrons aos núcleos atômicos, a luz pode
+                caminhar livremente. Cerca de 1 bilhão de anos depois do Big Bang, os elementos químicos começaram a se
+                unir dando origem às galáxias.<br><br>
+
+                Essa é a explicação sistemática da origem do universo, conforme a teoria do Big Bang. Aceita pela
+                maioria dos cientistas, entretanto, muito contestada por alguns pesquisadores. Portanto, a origem do
+                universo é um tema que gera muitas opiniões divergentes, sendo necessária uma análise crítica de cada
+                vertente que possa explicar esse acontecimento.<br> </p>
+
+            <div class="container_imagens_explicacao">
+
+                <img src="./imgs/big2.webp" alt="" class="imagens_bigbang"> <br>
+                <img src="./imgs/big4.jpg" alt="" class="imagens_bigbang"> <br>
+                <img src="./imgs/big5.jpg" alt="" class="imagens_bigbang"> <br>
+
+            </div>
+
+        </div>
+
+        <div class="container_video">
+            <iframe class="videos" src="https://www.youtube.com/embed/-5sb11GNwG0" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+    <div class="continuacao_conteudo" id="seguinte_buraco_negro" onclick="buraco_negro()">
+        <img src="./imgs/buraco7.jpg" width="300px" style="border-radius: 30px;" alt="" onclick="interacao_buracos()"><br>
+        <a class="link_continuacao_conteudo" href="#id_buraco_negro" onclick="interacao_buracos()">Buracos negros...</a>
+
+    </div>
+
+
+    <div class="container_explicacao" id="id_buraco_negro">
+
+        <h1 class="titulo_explicacao">Buracos Negros</h1>
+
+        <div class="container_texto_explicacao">
+
+            <p class="paragrafo_explicacao">Espera-se que os buracos negros se formem quando uma estrela massiva
+                morre. Depois que o combustível nuclear da estrela se esgota, seu núcleo entra em colapso para o estado
+                de matéria mais denso que se possa imaginar, cem vezes mais denso do que um núcleo atômico. É tão denso
+                que prótons, nêutrons e elétrons não são mais partículas distintas. Como os buracos negros são escuros,
+                eles são encontrados quando orbitam uma estrela normal. As propriedades da estrela normal permitem aos
+                astrônomos inferir as propriedades de seu companheiro escuro, um buraco negro.<br><br>
+
+                O primeiro buraco negro a ser confirmado foi Cygnus X-1, a fonte de raios-X mais brilhante na
+                constelação de Cygnus. Desde então, cerca de 50 buracos negros foram descobertos em sistemas onde uma
+                estrela normal orbita um buraco negro. Eles são os exemplos mais próximos de cerca de 10 milhões que
+                devem estar espalhados pela Via Láctea.<br><br>
+
+                Os buracos negros são tumbas de matéria; nada pode escapar deles, nem mesmo a luz. O destino de qualquer
+                pessoa que caia em um buraco negro seria uma dolorosa “espaguetificação”, uma ideia popularizada por
+                Stephen Hawking em seu livro “A Brief History of Time”. Na espaguetificação, a intensa gravidade do
+                buraco negro o separaria, separando seus ossos, músculos, tendões e até moléculas. Como o poeta Dante
+                descreveu as palavras sobre as portas do inferno em seu poema “A Divina Comédia”: Abandone a esperança,
+                todos vocês que aqui entram.<br><br>
+
+                Uma fera faminta em todas as galáxias
+                Nos últimos 30 anos, observações com o Telescópio Espacial Hubble mostraram que todas as galáxias têm
+                buracos negros em seus centros. Galáxias maiores têm buracos negros maiores.<br><br>
+
+                A natureza sabe como fazer buracos negros em uma gama impressionante de massas, de cadáveres de estrelas
+                algumas vezes maiores que a massa do Sol a monstros dezenas de bilhões de vezes mais massivos. Essa é a
+                diferença entre uma maçã e a Grande Pirâmide de Gizé.<br><br>
+
+                No ano passado, os astrônomos publicaram a primeira imagem de um buraco negro e seu horizonte de
+                eventos, uma besta de 7 bilhões de massa solar no centro da galáxia elíptica M87.<br><br>
+
+                É mais de mil vezes maior do que o buraco negro em nossa galáxia, e seus descobridores ganharam o Prêmio
+                Nobel deste ano. Esses buracos negros são escuros na maior parte do tempo, mas quando sua gravidade
+                atrai estrelas e gás próximos, eles entram em atividade intensa e liberam uma grande quantidade de
+                radiação. Buracos negros maciços são perigosos de duas maneiras. Se você chegar muito perto, a enorme
+                gravidade irá sugá-lo. E se eles estiverem em sua fase quasar ativa, você será atingido por uma radiação
+                de alta energia.<br><br>
+
+                Quão brilhante é um quasar? Imagine pairar sobre uma grande cidade como Los Angeles à noite. As cerca de
+                100 milhões de luzes de carros, casas e ruas da cidade correspondem às estrelas de uma galáxia. Nessa
+                analogia, o buraco negro em seu estado ativo é como uma fonte de luz de 1 polegada de diâmetro no centro
+                de Los Angeles que ofusca a cidade por um fator de centenas ou milhares. Quasares são os objetos mais
+                brilhantes do universo.<br><br>
+
+                Buracos negros supermassivos são “estranhos”
+                O maior buraco negro descoberto até agora pesa 40 bilhões de vezes a massa do Sol, ou 20 vezes o tamanho
+                do sistema solar. Enquanto os planetas externos em nosso sistema solar orbitam uma vez a cada 250 anos,
+                esse objeto muito mais massivo gira uma vez a cada três meses. Sua borda externa se move à metade da
+                velocidade da luz.<br><br>
+
+                Como todos os buracos negros, os enormes são protegidos da visão por um horizonte de eventos. Em seus
+                centros está uma singularidade, um ponto no espaço onde a densidade é infinita. Não podemos entender o
+                interior de um buraco negro porque as leis da física não funcionam. O tempo congela no horizonte de
+                eventos e a gravidade se torna infinita na singularidade.<br><br>
+
+                A boa notícia sobre buracos negros massivos é que você pode sobreviver caindo em um deles. Embora sua
+                gravidade seja mais forte, a força de alongamento é mais fraca do que seria com um pequeno buraco negro
+                e não o mataria. A má notícia é que o horizonte de eventos marca a beira do abismo. Nada pode escapar de
+                dentro do horizonte de eventos, então você não pode escapar ou relatar sua experiência.<br><br>
+
+                De acordo com Stephen Hawking, os buracos negros estão evaporando lentamente. No futuro distante do
+                universo, muito depois que todas as estrelas morreram e as galáxias foram arrancadas de vista pela
+                expansão cósmica acelerada, os buracos negros serão os últimos objetos sobreviventes.<br><br>
+
+                Os buracos negros mais massivos levarão um número inimaginável de anos para evaporar, estimado em 10
+                elevado à centésima potência, ou 10 com 100 zeros depois. Os objetos mais assustadores do universo são
+                quase eternos.<br><br>
+
+
+            </p>
+
+            <div class="container_imagens_explicacao">
+
+                <img src="./imgs/buraco1.jpg" alt="" class="imagens_buraco_negro"> <br>
+                <img src="./imgs/buraco3.jpg" alt="" class="imagens_buraco_negro"><br>
+                <img src="./imgs/buraco4.jpg" alt="" class="imagens_buraco_negro"><br>
+                <img src="./imgs/buraco5.jpg" alt="" class="imagens_buraco_negro" br>
+
+            </div>
+
+
+        </div>
+
+        <div class="container_video">
+            <iframe class="videos" src="https://www.youtube.com/embed/WvQlhMjGo4M" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+
+
+
+    </div>
+
+    <div id="continuacao_multiverso" class="continuacao_conteudo" onclick="multiverso()">
+        <img src="./imgs/multi1.jpeg" width="300px" style="border-radius: 30px;" alt="" onclick="interacao_multiversos()"><br>
+        <a href="#id_multiverso" class="link_continuacao_conteudo" onclick="interacao_multiversos()"> Multiversos...</a>
+
+    </div>
+
+
+    <div class="container_explicacao" id="id_multiverso">
+
+        <h1 class="titulo_explicacao">Multiversos</h1>
+
+        <div class="container_texto_explicacao">
+
+            <p class="paragrafo_explicacao">Conhecendo a idade do início da expansão e a velocidade da luz, é
+                fácil entender que só podemos neste momento enxergar objetos cuja luz teve tempo de chegar até nós desde
+                o Big Bang. É como se houvesse uma bolha ao nosso redor que marca tudo que podemos observar. O raio da
+                nossa bolha de Universo observável cresce ao ritmo de um ano-luz por ano. E, claro, no atual momento do
+                tempo, tem raio de aproximadamente 13,8 bilhões de anos-luz. <br><br>
+                Tenha em mente também que, quanto mais distante é o ponto de origem da luz, mais antiga é a luz que
+                estamos vendo agora. E, desde que essa luz partiu de lá para cá, a expansão cósmica continuou em ação,
+                separando-nos mais e mais. Por isso, os cientistas calculam que os objetos mais distantes que podemos
+                ver estejam hoje a uns 50 bilhões de anos-luz. <br><br>
+                Essa bolha continua a crescer mais e mais, mas tem um detalhe: a expansão cósmica é ainda mais
+                acelerada, de forma que, com o passar do tempo, o nosso Universo observável está ficando mais pobre, e
+                não mais rico. Ou seja, quanto mais tempo passa, restam menos galáxias visíveis. Mas elas decerto
+                continuarão existindo lá fora, mesmo sem que as vejamos, em seus próprios universos observáveis.<br><br>
+                Isso por si só já sugere que vivemos numa realidade “multivérsica”, por assim dizer, com múltiplos
+                universos observáveis.Sabemos que com certeza há espaços lá fora que estão causalmente desconectados de
+                nós (ou seja, nada que aconteça lá pode nos influenciar aqui, e vice-versa, porque qualquer influência
+                só pode ser comunicada à velocidade da luz, e a luz não é veloz o suficiente; o espaço cresce mais
+                rápido do que a luz consegue percorrê-lo). São, para todos os efeitos práticos, outros universo.<br><br>
+                E as coisas ficam ainda mais malucas quando você pega a inflação cósmica e joga na receita. Porque aí
+                você lembra que tudo isso que podemos ver veio de um único pontinho inflado de forma extraordinariamente
+                rápida. E que esse mesmo processo pode ter acontecido em outros pontinhos adjacentes, com propriedades
+                diferentes, gerando outros universos independentes. Isso, por sua vez, significa que haverá todo tipo de
+                universo, talvez até com leis e constantes físicas diferentes das nossas. Mas haverá também todo tipo de
+                universo parecido. Alguns tão parecidos que serão exatamente iguais. Se o multiverso for mesmo desse
+                modo, é possível que existam infinitas versões de você lendo esta revista, cada uma em sua própria bolha
+                isolada de universo.
+
+
+            </p>
+
+            <div class="container_imagens_explicacao">
+
+                <img src="./imgs/multi2.jpg" alt="" class="imagens_multiversos"> <br>
+                <img src="./imgs/multi3.jpg" alt="" class="imagens_multiversos"> <br>
+                <img src="./imgs/multi4.jpg" alt="" class="imagens_multiversos">
+
+            </div>
+
+        </div>
+
+
+
+        <div class="container_video">
+            <iframe class="videos" src="https://www.youtube.com/embed/G7A5xrhWgT0" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+        </div>
+
+    </div>
+
+    <div class="continuacao_conteudo" id="continuacao_crunch" onclick="Big_crunch()">
+        <img src="./imgs/crunch2.jpg" width="300px" style="border-radius: 30px;" alt="" onclick="interacao_crunch()"><br>
+        <a href="#id_big_crunch" class="link_continuacao_conteudo" onclick="interacao_crunch()">Big Crunch...</a><br>
+
+    </div>
+
+    <div class="container_explicacao" id="id_big_crunch">
+
+        <h1 class="titulo_explicacao">Big cruch</h1>
+
+        <div class="container_texto_explicacao">
+
+            <p class="paragrafo_explicacao">Em português, Big Crunch, significa grande colapso e, como o próprio nome já
+                sugere, a teoria explica que o universo irá, em um futuro, se contrair devido a atração gravitacional.
+                Isso vai resultar no fim do universo. Levando em consideração essa ideologia, com o passar do tempo as
+                galáxias iriam diminuir os espaços umas das outras, até o passo de deixarem de existir.<br><br>
+                Podemos entender pouco melhor essa teoria imaginando a situação de chutar uma bola para o alto, assim
+                que ela for chutada, poucos milésimos de segundo após o contato vamos perceber que a bola vai subir em
+                velocidade acelerada, ao chegar na altura necessária a bola vai começar a desacelerar até a força
+                gravitacional puxa-la de volta. Nosso universo é relativamente novo, tem por volta de 13,8 bilhões de
+                anos, neste momento estamos próximos da grande expansão e portanto estamos em velocidade acelerada, mas
+                a uma distancia necessária vamos desacelerar e então colapsar voltando ao ponto inicial.<br><br>
+                Para o físico Richard Tolman, responsável pela teoria do Big Crunch, o universo é cíclico e passa por
+                transformações repetidas de tempos em tempos. De acordo com o estudioso, depois da grande expansão há o
+                grande colapso, e depois volta os mesmo processos que duram anos. Mas a decadência é inevitável.<br><br>
+
+
+
+            </p>
+
+            <div class="container_imagens_explicacao">
+
+                <img src="./imgs/crunch3.jpg" alt="" class="imagens_big_crunch"> <br>
+                <img src="./imgs/crunch4.png" alt="" class="imagens_big_crunch"><br>
+
+
+
+            </div>
+
+
+        </div>
+
+
+        <div class="container_video">
+            <iframe class="videos" src="https://www.youtube.com/embed/fU6kgVLeuIo" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+        </div>
+
+
+
+    </div>
+
+    <div onclick="big_bang()" class="continuacao_conteudo" id="continuacao_big_bang">
+        <img src="./imgs/big3.jpg" width="300px" style="border-radius: 30px;" alt="" onclick="interacao_big_bang()"><br>
+        <a href="#id_big_bang" class="link_continuacao_conteudo" onclick="interacao_big_bang()">Big Bang...</a>
+
+    </div>
+
+
+    <!--Divisão para espaçamento-->
+    <div style="height: 300px;"></div>
+
+
+    <div>
+
+        <div class="container_cadastro" id="cadastro">
+            <div>
+                <img class="imagem_cadastro" src="./imgs/simb-mensagem.png">
+            </div>
+            <div>
+                <h2 class="texto_cadastro">Receber conteúdos <br> e novidades </h2>
+            </div>
+
+            <input type="text" class="input_cadastro" placeholder="Digite seu nome" id="nome_input">
+            <input type="text" class="input_cadastro" placeholder="Informe um email" id="email_input">
+
+            <button class="botao_cadastro" onclick="Cadastrando()">Cadastre-se</button>
+
+        </div>
+
+        <div class="container_contato">
+            <div>
+                <div class="titulo_contato"> Contato </div><br>
+                <div class="lista_links">
+                    <a class="link_contato" href=""><i class="far fa-envelope fa-1x"></i>
+                        Email: Universe@operacao.com.br<br><br></a>
+
+                    <a class="link_contato" href="" id="a_instagram"><i class="fab fa-instagram fa-1x"></i>
+                        Instagram: https://www.instagram.com/universe/<br><br></a>
+
+                    <a class="link_contato" href="" id="a_linkedin"><i class="fab fa-linkedin-in fa-1x"></i>
+                        Linkedin: https://br.linkedin.com/universe <br><br></a>
+
+                    <a class="link_contato" href=""><i class="fas fa-phone-alt fa-1x"></i>
+                        Central telefônica: (11) 5233-0901</a><br>
+                </div>
+                <div class="identificacao_ano">
+                    <h4 style="color: black;">Universe &copy; 2021</h4>
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+</html>
+
+<script>
+    function interacao_big_bang(){
+        var interacao_bigVar = 1;
+        fetch("/usuarios/interacao_big_bang", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    interacao_big: interacao_bigVar,
+
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    window.alert("conteudo interativo");
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+
+            });
+    }
+
+    function interacao_buracos(){
+        var interacao_buracosVar = 1;
+        fetch("/usuarios/interacao_buracos", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    interacao_buracos: interacao_buracosVar,
+
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    window.alert("conteudo interativo");
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+
+            });
+    }
+
+    function interacao_multiversos(){
+        var interacao_multiversosVar = 1;
+        fetch("/usuarios/interacao_multiversos", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    interacao_multiversos: interacao_multiversosVar,
+
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    window.alert("conteudo interativo");
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+
+            });
+    }
+
+    function interacao_crunch(){
+        var interacao_crunchVar = 1;
+        fetch("/usuarios/interacao_crunch", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    interacao_crunch: interacao_crunchVar,
+
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    window.alert("conteudo interativo");
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+
+            });
+    }
+
+
+
+    function big_bang() {
+        id_big_bang.style.display = "block";
+        id_buraco_negro.style.display = "none";
+        id_multiverso.style.display = "none";
+        id_big_crunch.style.display = "none";
+        seguinte_buraco_negro.style.display = "block";
+        continuacao_big_bang.style.display = "none"
+        continuacao_multiverso.style.display = "none";
+        continuacao_crunch.style.display = "none";
+
+    }
+    function buraco_negro() {
+        id_buraco_negro.style.display = "block";
+        id_big_bang.style.display = "none";
+        id_multiverso.style.display = "none";
+        id_big_crunch.style.display = "none";
+        seguinte_buraco_negro.style.display = "none";
+        continuacao_multiverso.style.display = "block";
+        continuacao_crunch.style.display = "none";
+        continuacao_big_bang.style.display = "none";
+    }
+    function multiverso() {
+        id_multiverso.style.display = "block";
+        id_big_bang.style.display = "none";
+        id_buraco_negro.style.display = "none";
+        id_big_crunch.style.display = "none";
+        continuacao_multiverso.style.display = "none";
+        continuacao_crunch.style.display = "block";
+        continuacao_big_bang.style.display = "none";
+        seguinte_buraco_negro.style.display = "none";
+
+    }
+    function Big_crunch() {
+        id_big_crunch.style.display = "block";
+        id_big_bang.style.display = "none";
+        id_buraco_negro.style.display = "none";
+        id_multiverso.style.display = "none";
+        continuacao_crunch.style.display = "none";
+        continuacao_big_bang.style.display = "block";
+        seguinte_buraco_negro.style.display = "none";
+        continuacao_multiverso.style.display = "none";
+    }
+    const coluna = {
+        type: "bar",
+        data: {
+            labels: ["Big Bang", "Buracos Negros", "Antimatéria", "Multiversos", "Big Crunch"],
+            datasets: [{
+                label: ["Análise conteúdo"],
+                data: [2000, 1800, 800, 1900, 1200],
+                backgroundColor: ["#800000", "#003153", "#90ee90", "#d75413", "#ffc0cb",],
+                borderColor: "#3cb371",
+                color: "red",
+            }
+            ]
+        },
+        options: {
+            labels: { color: "red" },
+            indexAxis: 'y',
+            maintainAspectRatio: false
+        }
+
+    }
+
+    var myChartcolumn = new Chart(document.getElementById("grafico_coluna"), coluna);
+
+    
+    function Cadastrando() {
+
+        if (nome_input.value == "") {
+            alert('Nome deve ser preenchido')
+        } else if (email_input.value == "") {
+            alert('Email deve ser preenchido')
+        } else if (email_input.value.indexOf("@") == -1 || email_input.value.indexOf(".") == -1 || email_input.value.indexOf(" ") != -1) {
+            alert('email incorreto')
+        } else {
+
+            var nomeVar = nome_input.value.toUpperCase();
+            var emailVar = email_input.value.toLowerCase();
+
+            fetch("/usuarios/cadastrar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nome: nomeVar,
+                    email: emailVar,
+
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    window.alert("Cadastro realizado com sucesso!!");
+                } else {
+                    throw ("Houve um erro ao tentar realizar o cadastro!");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+
+            });
+
+            nome_input.value = "";
+            email_input.value = ""; 
+            
+        }
+          
+    }
+</script>
