@@ -38,20 +38,27 @@ header {
     font-size: 26px; 
     color: white;
 }
+.link_lista_header:hover{
+    color: #5ce1e6;
+    text-decoration: underline;
+}
 
 /*Introducao*/
 
 .container_introducao{
-    margin-top: 40px; 
+    margin-top: 70px; 
     display: flex;
 }
 .text_introducao{
     height: 340px; 
-    background-color: rgba(0, 0, 0, 0.527); 
+    background-color: rgba(0, 0, 0, 0.76); 
     border-radius: 20px; 
     width: 70%; 
     margin: auto;
 
+}
+.text_introducao:hover{
+    background-color: rgba(0, 0, 0, 0.897); 
 }
 .titulo_introducao{
     color: white; 
@@ -64,27 +71,37 @@ header {
     font-size: 25px; 
     width: 90%;
 }
+
 /*Escolha e análise de conteúdo*/
 .container_conteudo{
     display: flex; 
     text-align: center; 
     width: 100%; 
     margin-top: 100px; 
-    margin-left: 4%; 
     align-items: center;
 }
 .div_conteudo1{
     cursor: pointer; 
     margin-top: 40px;
+    margin-left: 5%;
 }
+
 .img_escolha_conteudo{
     border-radius: 30px; 
     width: 200px;
+}
+.img_escolha_conteudo:hover{
+    box-shadow: -5px 5px 20px 5px #b19cd9;
+    
 }
 .link_texto_conteudo{
     text-decoration: none; 
     font-size: 22px; 
     color: white;
+}
+.link_texto_conteudo:hover{
+    color: #5ce1e6;
+    
 }
 .div_conteudo{
     cursor: pointer; 
@@ -185,6 +202,18 @@ header {
     font-size: 22px;
     color: white;
 }
+.link_continuacao_conteudo:hover{
+    font-size: 24px;
+    color: #5ce1e6;
+}
+.img_continuacao_conteudo{
+    width: 250px;
+}
+.img_continuacao_conteudo:hover{
+    width: 260px;
+    box-shadow: -5px 5px 20px 5px #b19cd9;
+
+}
 
 input::placeholder {
     color: white;
@@ -226,6 +255,7 @@ input::placeholder {
     margin: auto;
     color: white; 
     font-size: 16px;
+    cursor: pointer;
 }
 .botao_cadastro{
     width: 100px; 
@@ -235,8 +265,19 @@ input::placeholder {
     color: white; 
     margin: auto; 
     border-color: white; 
-    margin-right: 120px; 
+    margin-right: 100px; 
     cursor: pointer;
+}
+.botao_cadastro:hover{
+    border-radius: 20px; 
+    background-color: #993399; 
+    color: white; 
+    margin: auto; 
+    border-color: white; 
+    margin-right: 100px; 
+    cursor: pointer;
+    box-shadow: -5px 5px 20px 5px #b19cd9;
+
 }
 /*footer contato*/
 .container_contato{
