@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/be7ca57738.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript" src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Mukta:wght@300&display=swap" rel="stylesheet">
@@ -27,7 +28,7 @@
                 <a class="link_lista_header" href="#cadastro">Receba novidades</a>
             </li>
             <li>
-                <a class="link_lista_header" href="">Análise de
+                <a class="link_lista_header" href="#id_grafico">Análise de
                     conteúdo</a>
             </li>
             <li>
@@ -49,36 +50,45 @@
 
         </div>
     </div>
+    <div id="id_grafico"></div>
 
 
     <div class="container_conteudo">
 
-        <div onclick="big_bang()" class="div_conteudo1" >
-            <img class="img_escolha_conteudo" src="./imgs/big3.jpg" onclick="interacao_big_bang()"><br>
-            <a class="link_texto_conteudo" href="#id_big_bang" onclick="interacao_big_bang()" >Big Bang</a>
+        <div onclick="big_bang()" class="div_conteudo1">
+            <a class="link_texto_conteudo" href="#id_big_bang" onclick="interacao_big_bang()">
+                <img class="img_escolha_conteudo" src="./imgs/big3.jpg" onclick="interacao_big_bang()"><br>
+                Big Bang
+            </a>
 
         </div>
 
-        <div class="div_conteudo" onclick="buraco_negro()" >
-            <img class="img_escolha_conteudo" src="./imgs/buraco7.jpg" onclick="interacao_buracos()"><br>
-            <a class="link_texto_conteudo" href="#id_buraco_negro" onclick="interacao_buracos()">Buracos negros</a>
+        <div class="div_conteudo" onclick="buraco_negro()">
+            <a class="link_texto_conteudo" href="#id_buraco_negro" onclick="interacao_buracos()">
+                <img class="img_escolha_conteudo" src="./imgs/buraco7.jpg" onclick="interacao_buracos()"><br>
+                Buracos negros
+            </a>
 
         </div>
 
         <div class="div_conteudo" onclick="multiverso()">
-            <img class="img_escolha_conteudo" src="./imgs/multi1.jpeg" onclick="interacao_multiversos()"><br>
-            <a class="link_texto_conteudo" href="#id_multiverso" onclick="interacao_multiversos()"> Multiversos</a>
+            <a class="link_texto_conteudo" href="#id_multiverso" onclick="interacao_multiversos()">
+                <img class="img_escolha_conteudo" src="./imgs/multi1.jpeg" onclick="interacao_multiversos()"><br>
+                Multiversos
+            </a>
 
         </div>
 
         <div class="div_conteudo" onclick="Big_crunch()">
-            <img class="img_escolha_conteudo" src="./imgs/crunch2.jpg" onclick="interacao_crunch()"><br>
-            <a class="link_texto_conteudo" href="#id_big_crunch" onclick="interacao_crunch()" >Big Crunch</a><br>
+            <a class="link_texto_conteudo" href="#id_big_crunch" onclick="interacao_crunch()">
+                <img class="img_escolha_conteudo" src="./imgs/crunch2.jpg" onclick="interacao_crunch()"><br>
+                Big Crunch
+            </a><br>
 
         </div>
 
 
-        <div class="container_grafico">
+        <div class="container_grafico" onclick="verificar_interacao_grafico()">
             <div class="titulo_grafico">Conteúdos mais acesssados</div>
             <div class="container_caixa_grafico">
                 <div class="caixa_grafico">
@@ -148,8 +158,11 @@
     </div>
 
     <div class="continuacao_conteudo" id="seguinte_buraco_negro" onclick="buraco_negro()">
-        <img src="./imgs/buraco7.jpg" width="300px" style="border-radius: 30px;" alt="" onclick="interacao_buracos()"><br>
-        <a class="link_continuacao_conteudo" href="#id_buraco_negro" onclick="interacao_buracos()">Buracos negros...</a>
+        <a class="link_continuacao_conteudo" href="#id_buraco_negro" onclick="interacao_buracos()">
+        <img src="./imgs/buraco7.jpg" width="300px" style="border-radius: 30px;" alt=""
+            onclick="interacao_buracos()"><br>
+        Buracos negros...
+    </a>
 
     </div>
 
@@ -254,8 +267,11 @@
     </div>
 
     <div id="continuacao_multiverso" class="continuacao_conteudo" onclick="multiverso()">
-        <img src="./imgs/multi1.jpeg" width="300px" style="border-radius: 30px;" alt="" onclick="interacao_multiversos()"><br>
-        <a href="#id_multiverso" class="link_continuacao_conteudo" onclick="interacao_multiversos()"> Multiversos...</a>
+        <a href="#id_multiverso" class="link_continuacao_conteudo" onclick="interacao_multiversos()">
+        <img src="./imgs/multi1.jpeg" width="300px" style="border-radius: 30px;" alt=""
+            onclick="interacao_multiversos()"><br>
+         Multiversos...
+        </a>
 
     </div>
 
@@ -318,8 +334,11 @@
     </div>
 
     <div class="continuacao_conteudo" id="continuacao_crunch" onclick="Big_crunch()">
-        <img src="./imgs/crunch2.jpg" width="300px" style="border-radius: 30px;" alt="" onclick="interacao_crunch()"><br>
-        <a href="#id_big_crunch" class="link_continuacao_conteudo" onclick="interacao_crunch()">Big Crunch...</a><br>
+        <a href="#id_big_crunch" class="link_continuacao_conteudo" onclick="interacao_crunch()">
+        <img src="./imgs/crunch2.jpg" width="300px" style="border-radius: 30px;" alt=""
+            onclick="interacao_crunch()"><br>
+        Big Crunch...
+        </a><br>
 
     </div>
 
@@ -373,14 +392,16 @@
     </div>
 
     <div onclick="big_bang()" class="continuacao_conteudo" id="continuacao_big_bang">
+        <a href="#id_big_bang" class="link_continuacao_conteudo" onclick="interacao_big_bang()">
         <img src="./imgs/big3.jpg" width="300px" style="border-radius: 30px;" alt="" onclick="interacao_big_bang()"><br>
-        <a href="#id_big_bang" class="link_continuacao_conteudo" onclick="interacao_big_bang()">Big Bang...</a>
+        Big Bang...
+    </a>
 
     </div>
 
 
     <!--Divisão para espaçamento-->
-    <div style="height: 300px;"></div>
+    <div style="height: 100px;" id="id_espacamento"></div>
 
 
     <div>
@@ -434,111 +455,157 @@
 </html>
 
 <script>
-    function interacao_big_bang(){
+    window.onload = verificar_interacao_grafico();
+
+    function verificar_interacao_grafico(idAquario) {
+
+
+        fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    console.log('a resposta retornou um valor, agora se chegou no gráfico ainda não sabemos');
+                    plotarGrafico(resposta, idAquario);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+            });
+    }
+    function plotarGrafico(resposta, idAquario) {
+        console.log('iniciando plotagem do gráfico...');
+
+        const coluna = {
+            type: "bar",
+            data: {
+                labels: ["Big Bang", "Buracos Negros", "Multiversos", "Big Crunch"],
+                datasets: [{
+                    label: ["Análise conteúdo"],
+                    data: [resposta[0].interacao_big, resposta[0].buracosNegros, resposta[0].multiversos, resposta[0].bigCrunch],
+                    backgroundColor: ["#800000", "#003153", "#90ee90", "#d75413",],
+                    color: "red",
+                }
+                ]
+            },
+            options: {
+                labels: { color: "red" },
+                maintainAspectRatio: false
+            }
+
+        }
+
+        var myChartcolumn = new Chart(document.getElementById("grafico_coluna"), coluna);
+
+
+    }
+    function interacao_big_bang() {
         var interacao_bigVar = 1;
         fetch("/usuarios/interacao_big_bang", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    interacao_big: interacao_bigVar,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                interacao_big: interacao_bigVar,
 
-                })
-            }).then(function (resposta) {
+            })
+        }).then(function (resposta) {
 
-                console.log("resposta: ", resposta);
+            console.log("resposta: ", resposta);
 
-                if (resposta.ok) {
-                    window.alert("conteudo interativo");
-                } else {
-                    throw ("Houve um erro ao tentar realizar o cadastro!");
-                }
-            }).catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
+            if (resposta.ok) {
+                console.log("conteudo interativo");
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
 
-            });
+        });
     }
 
-    function interacao_buracos(){
+    function interacao_buracos() {
         var interacao_buracosVar = 1;
         fetch("/usuarios/interacao_buracos", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    interacao_buracos: interacao_buracosVar,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                interacao_buracos: interacao_buracosVar,
 
-                })
-            }).then(function (resposta) {
+            })
+        }).then(function (resposta) {
 
-                console.log("resposta: ", resposta);
+            console.log("resposta: ", resposta);
 
-                if (resposta.ok) {
-                    window.alert("conteudo interativo");
-                } else {
-                    throw ("Houve um erro ao tentar realizar o cadastro!");
-                }
-            }).catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
+            if (resposta.ok) {
+                console.log("conteudo interativo");
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
 
-            });
+        });
     }
 
-    function interacao_multiversos(){
+    function interacao_multiversos() {
         var interacao_multiversosVar = 1;
         fetch("/usuarios/interacao_multiversos", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    interacao_multiversos: interacao_multiversosVar,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                interacao_multiversos: interacao_multiversosVar,
 
-                })
-            }).then(function (resposta) {
+            })
+        }).then(function (resposta) {
 
-                console.log("resposta: ", resposta);
+            console.log("resposta: ", resposta);
 
-                if (resposta.ok) {
-                    window.alert("conteudo interativo");
-                } else {
-                    throw ("Houve um erro ao tentar realizar o cadastro!");
-                }
-            }).catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
+            if (resposta.ok) {
+                console.log("conteudo interativo");
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
 
-            });
+        });
     }
 
-    function interacao_crunch(){
+    function interacao_crunch() {
         var interacao_crunchVar = 1;
         fetch("/usuarios/interacao_crunch", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    interacao_crunch: interacao_crunchVar,
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                interacao_crunch: interacao_crunchVar,
 
-                })
-            }).then(function (resposta) {
+            })
+        }).then(function (resposta) {
 
-                console.log("resposta: ", resposta);
+            console.log("resposta: ", resposta);
 
-                if (resposta.ok) {
-                    window.alert("conteudo interativo");
-                } else {
-                    throw ("Houve um erro ao tentar realizar o cadastro!");
-                }
-            }).catch(function (resposta) {
-                console.log(`#ERRO: ${resposta}`);
+            if (resposta.ok) {
+                console.log("conteudo interativo");
+            } else {
+                throw ("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
 
-            });
+        });
     }
-
-
 
     function big_bang() {
         id_big_bang.style.display = "block";
@@ -582,30 +649,10 @@
         seguinte_buraco_negro.style.display = "none";
         continuacao_multiverso.style.display = "none";
     }
-    const coluna = {
-        type: "bar",
-        data: {
-            labels: ["Big Bang", "Buracos Negros", "Antimatéria", "Multiversos", "Big Crunch"],
-            datasets: [{
-                label: ["Análise conteúdo"],
-                data: [2000, 1800, 800, 1900, 1200],
-                backgroundColor: ["#800000", "#003153", "#90ee90", "#d75413", "#ffc0cb",],
-                borderColor: "#3cb371",
-                color: "red",
-            }
-            ]
-        },
-        options: {
-            labels: { color: "red" },
-            indexAxis: 'y',
-            maintainAspectRatio: false
-        }
 
-    }
 
-    var myChartcolumn = new Chart(document.getElementById("grafico_coluna"), coluna);
 
-    
+
     function Cadastrando() {
 
         if (nome_input.value == "") {
@@ -644,9 +691,9 @@
             });
 
             nome_input.value = "";
-            email_input.value = ""; 
-            
+            email_input.value = "";
+
         }
-          
+
     }
 </script>
