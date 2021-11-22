@@ -25,6 +25,9 @@
         <img class="img_logo" src="./imgs/logo-branco.png" alt="logo">
         <ul class="lista_header">
             <li>
+                <a class="link_lista_header" href="#id_contato">Contato</a>
+            </li>
+            <li>
                 <a class="link_lista_header" href="#cadastro">Receba novidades</a>
             </li>
             <li>
@@ -32,8 +35,9 @@
                     conteúdo</a>
             </li>
             <li>
-                <a class="link_lista_header" href="#id_contato">Contato</a>
+                <a class="link_lista_header" href="#id_container_geral_comentarios">Avaliações</a>
             </li>
+            
         </ul>
 
     </header>
@@ -88,7 +92,7 @@
 
         </div>
 
-        
+
         <div class="container_grafico" onclick="verificar_interacao_grafico()">
             <div class="titulo_grafico">Conteúdos mais acesssados</div>
             <div class="container_caixa_grafico">
@@ -160,10 +164,10 @@
 
     <div class="continuacao_conteudo" id="seguinte_buraco_negro" onclick="buraco_negro()">
         <a class="link_continuacao_conteudo" href="#id_buraco_negro" onclick="interacao_buracos()">
-        <img src="./imgs/buraco7.jpg" class="img_continuacao_conteudo" style="border-radius: 30px;" alt=""
-            onclick="interacao_buracos()"><br>
-        Buracos negros...
-    </a>
+            <img src="./imgs/buraco7.jpg" class="img_continuacao_conteudo" style="border-radius: 30px;" alt=""
+                onclick="interacao_buracos()"><br>
+            Buracos negros...
+        </a>
 
     </div>
 
@@ -269,9 +273,9 @@
 
     <div id="continuacao_multiverso" class="continuacao_conteudo" onclick="multiverso()">
         <a href="#id_multiverso" class="link_continuacao_conteudo" onclick="interacao_multiversos()">
-        <img src="./imgs/multi1.jpeg" class="img_continuacao_conteudo" style="border-radius: 30px;" alt=""
-            onclick="interacao_multiversos()"><br>
-         Multiversos...
+            <img src="./imgs/multi1.jpeg" class="img_continuacao_conteudo" style="border-radius: 30px;" alt=""
+                onclick="interacao_multiversos()"><br>
+            Multiversos...
         </a>
 
     </div>
@@ -336,9 +340,9 @@
 
     <div class="continuacao_conteudo" id="continuacao_crunch" onclick="Big_crunch()">
         <a href="#id_big_crunch" class="link_continuacao_conteudo" onclick="interacao_crunch()">
-        <img src="./imgs/crunch2.jpg" class="img_continuacao_conteudo" style="border-radius: 30px;" alt=""
-            onclick="interacao_crunch()"><br>
-        Big Crunch...
+            <img src="./imgs/crunch2.jpg" class="img_continuacao_conteudo" style="border-radius: 30px;" alt=""
+                onclick="interacao_crunch()"><br>
+            Big Crunch...
         </a><br>
 
     </div>
@@ -394,15 +398,101 @@
 
     <div onclick="big_bang()" class="continuacao_conteudo" id="continuacao_big_bang">
         <a href="#id_big_bang" class="link_continuacao_conteudo" onclick="interacao_big_bang()">
-        <img src="./imgs/big3.jpg" class="img_continuacao_conteudo" style="border-radius: 30px;" alt="" onclick="interacao_big_bang()"><br>
-        Big Bang...
-    </a>
+            <img src="./imgs/big3.jpg" class="img_continuacao_conteudo" style="border-radius: 30px;" alt=""
+                onclick="interacao_big_bang()"><br>
+            Big Bang...
+        </a>
 
     </div>
 
 
     <!--Divisão para espaçamento-->
     <div style="height: 100px;" id="id_espacamento"></div>
+
+    <!--Espaço para comentários-->
+    <div class="container_geral_comentarios" id="id_container_geral_comentarios">
+
+        <div class="container_preenchimento">
+            <img src="./imgs/foto-perfil.png" class="img_perfil_preenchimento" alt="">
+            <div class="preenchimento_interno">
+                <input class="input_comentario" type="text" id="id_comentario" placeholder="Nos conte o que achou..."><br><br>
+                <span class="texto_nome">Nome:</span> <input class="input_nome" id="id_nome" type="text">
+                <span class="texto_classificar"> Classificar conteúdo:
+
+                    <select id="id_nota">
+                        <option value="">-</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+
+                    </select> estrelas <button class="botao_publicar" onclick="comentar()">Publicar</button> </span>
+                
+            </div>
+
+
+
+        </div>
+    </div>
+    <div class="container_geral_comentarios_publicados">
+
+        <!--Comentários dinâmicos-->
+        <div id="comentario6" class="comentario_publicado_dinâmico">
+        </div>
+        <div id="comentario5" class="comentario_publicado_dinâmico">
+        </div>
+        <div id="comentario4" class="comentario_publicado_dinâmico">
+        </div>      
+        
+
+        <!--Primeiro comentário fixo-->
+        <div id="comentario1" class="comentario_publicado_fixo">
+
+            <img src="./imgs/foto-perfil.png" class="img_comentario_fixo">
+            <div class="container_comentario_fixo_interno">
+                <span class="texto_avaliacao_comentario_fixo"> Avaliou conteúdo como: <span>5</span> estrelas </span>
+                <div type="text" class="nome_comentario"> Joel Silva lima </div>
+                <div type="text" class="container_conteudo_comentario">
+                    Achei o conteúdo presente no site, muito interessante, passei bastante tempo lendo e descobrindo
+                    muitas coisas novas sobre o universo! Aguardando novos conteúdos.</div>
+            </div>
+            <div style="height: 120px;"></div>
+
+        </div>
+
+        <!--Segundo comentário fixo-->
+        <div id="comentario2" class="comentario_publicado_fixo">
+
+            <img src="./imgs/foto-perfil.png" class="img_comentario_fixo">
+            <div class="container_comentario_fixo_interno">
+                <span class="texto_avaliacao_comentario_fixo"> Avaliou conteúdo como: <span>2</span> estrelas </span>
+                <div type="text" class="nome_comentario">Wesley Santos </div>
+                <div type="text" class="container_conteudo_comentario">
+                    Acho que poderiam melhorar a forma de apresentação do conteúdo</div>
+            </div>
+            <div style="height: 120px;"></div>
+
+        </div>
+
+        <!--Terceiro Comentário fixo-->
+        <div id="comentario3" class="comentario_publicado_fixo">
+
+            <img src="./imgs/foto-perfil.png" class="img_comentario_fixo">
+            <div class="container_comentario_fixo_interno">
+                <span class="texto_avaliacao_comentario_fixo"> Avaliou conteúdo como: <span>5</span> estrelas </span>
+                <div type="text" class="nome_comentario">Fernando Xavier</div>
+                <div type="text" class="container_conteudo_comentario">
+                    Conteúdo muito bom, posso ficar horas lendo sobre o universo s2 </div>
+            </div>
+            <div style="height: 120px;"></div>
+
+        </div>
+        
+
+    </div>
+    <!--Divisão para espaçamento-->
+    <div style="height: 0px;" id="id_espacamento2"></div>
 
 
     <div>
@@ -456,6 +546,9 @@
 </html>
 
 <script>
+    var lista_comentarios = [];
+    var lista_nomes = [];
+    var lista_notas = [];
     window.onload = verificar_interacao_grafico();
 
     function verificar_interacao_grafico(idAquario) {
@@ -650,10 +743,6 @@
         seguinte_buraco_negro.style.display = "none";
         continuacao_multiverso.style.display = "none";
     }
-
-
-
-
     function Cadastrando() {
 
         if (nome_input.value == "") {
@@ -696,5 +785,54 @@
 
         }
 
+    }
+
+    function comentar() {
+        if (id_nome.value == "") {
+            alert('Nome deve ser preenchido')
+        }else if (id_comentario.value == "") {
+            alert('Comentário não informado')
+        } else if (id_nota.value == "") {
+            alert('É necessário classificar o conteúdo')
+        } else {
+
+        lista_comentarios.push(id_comentario.value);
+        lista_nomes.push(id_nome.value);
+        lista_notas.push(id_nota.value);
+
+        id_comentario.value = "";
+        id_nome.value = "";
+        id_nota.value = "";
+        comentario4.style.display = "flex"
+        comentario4.innerHTML = `<img src="./imgs/foto-perfil.png" class="img_comentario_fixo">
+            <div class="container_comentario_fixo_interno">
+                <span class="texto_avaliacao_comentario_fixo"> Avaliou conteúdo como: <span>${lista_notas[0]}</span> estrelas </span>
+                <div type="text" class="nome_comentario">${lista_nomes[0]}</div>
+                <div type="text" class="container_conteudo_comentario"> ${lista_comentarios[0]}</div>
+            </div>
+            <div style="height: 120px;"></div>`;
+        if(lista_comentarios.length > 1){
+        comentario5.style.display = "flex"
+        id_espacamento2.style = 'height: 100px';
+        comentario5.innerHTML = `<img src="./imgs/foto-perfil.png" class="img_comentario_fixo">
+            <div class="container_comentario_fixo_interno">
+                <span class="texto_avaliacao_comentario_fixo"> Avaliou conteúdo como: <span>${lista_notas[1]}</span> estrelas </span>
+                <div type="text" class="nome_comentario">${lista_nomes[1]}</div>
+                <div type="text" class="container_conteudo_comentario"> ${lista_comentarios[1]}</div>
+            </div>
+            <div style="height: 120px;"></div>`;
+        }
+        if(lista_comentarios.length > 2){
+        comentario6.style.display = "flex"
+        id_espacamento2.style = 'height: 200px';
+        comentario6.innerHTML = `<img src="./imgs/foto-perfil.png" class="img_comentario_fixo">
+            <div class="container_comentario_fixo_interno">
+                <span class="texto_avaliacao_comentario_fixo"> Avaliou conteúdo como: <span>${lista_notas[2]}</span> estrelas </span>
+                <div type="text" class="nome_comentario">${lista_nomes[2]}</div>
+                <div type="text" class="container_conteudo_comentario"> ${lista_comentarios[2]}</div>
+            </div>
+            <div style="height: 120px;"></div>`;
+        }
+    }
     }
 </script>
