@@ -139,6 +139,35 @@ function interacao_crunch(req, res) {
             );
     
 }
+function comentar(req, res) {
+    var nomeC = req.body.nomeC;
+    var comentario = req.body.comentario;
+    var nota = req.body.nota;
+
+    if (nomeC == undefined) {
+        res.status(400).send("Nome não informado :(");
+    } else if (comentario == undefined) {
+        res.status(400).send("Comentario não informado :(");
+    } else if (nota == undefined) {
+        res.status(400).send("Nota não informada :(");
+    }else {
+        usuarioModel.comentar(nomeC, comentario, nota)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o comentario! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
 
 module.exports = {
     cadastrar,
@@ -147,5 +176,6 @@ module.exports = {
     interacao_big_bang,
     interacao_buracos,
     interacao_multiversos,
-    interacao_crunch
+    interacao_crunch,
+    comentar
 }

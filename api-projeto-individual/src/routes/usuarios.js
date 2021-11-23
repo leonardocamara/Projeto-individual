@@ -15,6 +15,10 @@ router.post("/cadastrar", function (req, res) {
     usuarioController.cadastrar(req, res);
 });
 
+router.post("/comentar", function (req, res) {
+    usuarioController.comentar(req, res);
+});
+
 router.post("/interacao_big_bang", function (req, res) {
     usuarioController.interacao_big_bang(req, res);
 });

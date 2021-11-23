@@ -53,13 +53,21 @@ function  interacao_crunch(interacao_crunch) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
-
+function comentar(nomeC, texto, nota) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nomeC, texto, nota);
+    var instrucao = `
+        INSERT INTO comentario (nomeC, texto, nota) VALUES ('${nomeC}', '${texto}', '${nota}');
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
 module.exports = {
     cadastrar,
     listar,
     interacao_big_bang,
     interacao_buracos,
     interacao_multiversos,
-    interacao_crunch
+    interacao_crunch,
+    comentar
 
 };

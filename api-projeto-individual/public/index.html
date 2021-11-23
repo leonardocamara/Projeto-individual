@@ -435,65 +435,14 @@
 
         </div>
     </div>
-    <div class="container_geral_comentarios_publicados">
+    <div id="todos_os_comentarios" class="container_geral_comentarios_publicados">
 
         <!--Comentários dinâmicos-->
-        <div id="comentario6" class="comentario_publicado_dinâmico">
-        </div>
-        <div id="comentario5" class="comentario_publicado_dinâmico">
-        </div>
-        <div id="comentario4" class="comentario_publicado_dinâmico">
-        </div>      
+        <div id="impressao_comentario"></div>      
         
-
-        <!--Primeiro comentário fixo-->
-        <div id="comentario1" class="comentario_publicado_fixo">
-
-            <img src="./imgs/foto-perfil.png" class="img_comentario_fixo">
-            <div class="container_comentario_fixo_interno">
-                <span class="texto_avaliacao_comentario_fixo"> Avaliou conteúdo como: <span>5</span> estrelas </span>
-                <div type="text" class="nome_comentario"> Joel Silva lima </div>
-                <div type="text" class="container_conteudo_comentario">
-                    Achei o conteúdo presente no site, muito interessante, passei bastante tempo lendo e descobrindo
-                    muitas coisas novas sobre o universo! Aguardando novos conteúdos.</div>
-            </div>
-            <div style="height: 120px;"></div>
-
-        </div>
-
-        <!--Segundo comentário fixo-->
-        <div id="comentario2" class="comentario_publicado_fixo">
-
-            <img src="./imgs/foto-perfil.png" class="img_comentario_fixo">
-            <div class="container_comentario_fixo_interno">
-                <span class="texto_avaliacao_comentario_fixo"> Avaliou conteúdo como: <span>2</span> estrelas </span>
-                <div type="text" class="nome_comentario">Wesley Santos </div>
-                <div type="text" class="container_conteudo_comentario">
-                    Acho que poderiam melhorar a forma de apresentação do conteúdo</div>
-            </div>
-            <div style="height: 120px;"></div>
-
-        </div>
-
-        <!--Terceiro Comentário fixo-->
-        <div id="comentario3" class="comentario_publicado_fixo">
-
-            <img src="./imgs/foto-perfil.png" class="img_comentario_fixo">
-            <div class="container_comentario_fixo_interno">
-                <span class="texto_avaliacao_comentario_fixo"> Avaliou conteúdo como: <span>5</span> estrelas </span>
-                <div type="text" class="nome_comentario">Fernando Xavier</div>
-                <div type="text" class="container_conteudo_comentario">
-                    Conteúdo muito bom, posso ficar horas lendo sobre o universo s2 </div>
-            </div>
-            <div style="height: 120px;"></div>
-
-        </div>
-        
-
-    </div>
+    </div> 
+    
     <!--Divisão para espaçamento-->
-    <div style="height: 0px;" id="id_espacamento2"></div>
-
 
     <div>
 
@@ -511,6 +460,8 @@
             <button class="botao_cadastro" onclick="Cadastrando()">Cadastre-se</button>
 
         </div>
+
+
 
         <div class="container_contato" id="id_contato">
             <div>
@@ -550,8 +501,9 @@
     var lista_nomes = [];
     var lista_notas = [];
     window.onload = verificar_interacao_grafico();
+    window.onload = carregarComentarios();
 
-    function verificar_interacao_grafico(idAquario) {
+function verificar_interacao_grafico(idAquario) {
 
 
         fetch(`/medidas/ultimas/${idAquario}`, { cache: 'no-store' }).then(function (response) {
@@ -571,7 +523,8 @@
                 console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
             });
     }
-    function plotarGrafico(resposta, idAquario) {
+    
+function plotarGrafico(resposta, idAquario) {
         console.log('iniciando plotagem do gráfico...');
 
         const coluna = {
@@ -597,7 +550,8 @@
 
 
     }
-    function interacao_big_bang() {
+    
+function interacao_big_bang() {
         var interacao_bigVar = 1;
         fetch("/usuarios/interacao_big_bang", {
             method: "POST",
@@ -622,8 +576,8 @@
 
         });
     }
-
-    function interacao_buracos() {
+    
+function interacao_buracos() {
         var interacao_buracosVar = 1;
         fetch("/usuarios/interacao_buracos", {
             method: "POST",
@@ -648,8 +602,8 @@
 
         });
     }
-
-    function interacao_multiversos() {
+    
+function interacao_multiversos() {
         var interacao_multiversosVar = 1;
         fetch("/usuarios/interacao_multiversos", {
             method: "POST",
@@ -675,7 +629,7 @@
         });
     }
 
-    function interacao_crunch() {
+function interacao_crunch() {
         var interacao_crunchVar = 1;
         fetch("/usuarios/interacao_crunch", {
             method: "POST",
@@ -701,7 +655,7 @@
         });
     }
 
-    function big_bang() {
+function big_bang() {
         id_big_bang.style.display = "block";
         id_buraco_negro.style.display = "none";
         id_multiverso.style.display = "none";
@@ -712,7 +666,8 @@
         continuacao_crunch.style.display = "none";
 
     }
-    function buraco_negro() {
+    
+function buraco_negro() {
         id_buraco_negro.style.display = "block";
         id_big_bang.style.display = "none";
         id_multiverso.style.display = "none";
@@ -722,7 +677,8 @@
         continuacao_crunch.style.display = "none";
         continuacao_big_bang.style.display = "none";
     }
-    function multiverso() {
+    
+function multiverso() {
         id_multiverso.style.display = "block";
         id_big_bang.style.display = "none";
         id_buraco_negro.style.display = "none";
@@ -733,7 +689,8 @@
         seguinte_buraco_negro.style.display = "none";
 
     }
-    function Big_crunch() {
+    
+function Big_crunch() {
         id_big_crunch.style.display = "block";
         id_big_bang.style.display = "none";
         id_buraco_negro.style.display = "none";
@@ -743,7 +700,8 @@
         seguinte_buraco_negro.style.display = "none";
         continuacao_multiverso.style.display = "none";
     }
-    function Cadastrando() {
+    
+function Cadastrando() {
 
         if (nome_input.value == "") {
             alert('Nome deve ser preenchido')
@@ -787,7 +745,7 @@
 
     }
 
-    function comentar() {
+function comentar() {
         if (id_nome.value == "") {
             alert('Nome deve ser preenchido')
         }else if (id_comentario.value == "") {
@@ -800,39 +758,107 @@
         lista_nomes.push(id_nome.value);
         lista_notas.push(id_nota.value);
 
+        var varNome = id_nome.value;
+        var varComentario = id_comentario.value;
+        var varNota = id_nota.value;
+
         id_comentario.value = "";
         id_nome.value = "";
         id_nota.value = "";
-        comentario4.style.display = "flex"
-        comentario4.innerHTML = `<img src="./imgs/foto-perfil.png" class="img_comentario_fixo">
-            <div class="container_comentario_fixo_interno">
-                <span class="texto_avaliacao_comentario_fixo"> Avaliou conteúdo como: <span>${lista_notas[0]}</span> estrelas </span>
-                <div type="text" class="nome_comentario">${lista_nomes[0]}</div>
-                <div type="text" class="container_conteudo_comentario"> ${lista_comentarios[0]}</div>
-            </div>
-            <div style="height: 120px;"></div>`;
-        if(lista_comentarios.length > 1){
-        comentario5.style.display = "flex"
-        id_espacamento2.style = 'height: 100px';
-        comentario5.innerHTML = `<img src="./imgs/foto-perfil.png" class="img_comentario_fixo">
-            <div class="container_comentario_fixo_interno">
-                <span class="texto_avaliacao_comentario_fixo"> Avaliou conteúdo como: <span>${lista_notas[1]}</span> estrelas </span>
-                <div type="text" class="nome_comentario">${lista_nomes[1]}</div>
-                <div type="text" class="container_conteudo_comentario"> ${lista_comentarios[1]}</div>
-            </div>
-            <div style="height: 120px;"></div>`;
-        }
-        if(lista_comentarios.length > 2){
-        comentario6.style.display = "flex"
-        id_espacamento2.style = 'height: 200px';
-        comentario6.innerHTML = `<img src="./imgs/foto-perfil.png" class="img_comentario_fixo">
-            <div class="container_comentario_fixo_interno">
-                <span class="texto_avaliacao_comentario_fixo"> Avaliou conteúdo como: <span>${lista_notas[2]}</span> estrelas </span>
-                <div type="text" class="nome_comentario">${lista_nomes[2]}</div>
-                <div type="text" class="container_conteudo_comentario"> ${lista_comentarios[2]}</div>
-            </div>
-            <div style="height: 120px;"></div>`;
-        }
+
+        fetch("/usuarios/comentar", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    nomeC: varNome,
+                    comentario: varComentario,
+                    nota: varNota,
+
+                })
+            }).then(function (resposta) {
+
+                console.log("resposta: ", resposta);
+
+                if (resposta.ok) {
+                    window.alert("Comentário realizado com sucesso!!");
+                    carregarComentarios();
+                } else {
+                    throw ("Houve um erro ao tentar realizar o comentário");
+                }
+            }).catch(function (resposta) {
+                console.log(`#ERRO: ${resposta}`);
+
+            });
     }
     }
+    
+function carregarComentarios(idComentario){
+        
+        fetch(`/medidas/comentarios/${idComentario}`, { cache: 'no-store' }).then(function (response) {
+            if (response.ok) {
+                response.json().then(function (resposta) {
+                    console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+                    resposta.reverse();
+                    console.log('a resposta retornou um valor, agora se carregou os comentarios vamos descobrir');
+                    plotarComentarios(resposta, idComentario);
+                    console.log(resposta, idComentario);
+
+                });
+            } else {
+                console.error('Nenhum dado encontrado ou erro na API');
+            }
+        })
+            .catch(function (error) {
+                console.error(`Erro na obtenção dos dados p/ comentários: ${error.message}`);
+            });
+
+    }
+
+function plotarComentarios(resposta, idComentario){
+    impressao_comentario.style.display = "block"
+    var contador = 0
+
+    impressao_comentario.innerHTML = ``;
+    while(contador < resposta.length){
+
+        impressao_comentario.innerHTML += `
+        <div id="comentario3" class="comentario_publicado_fixo">
+        <img src="./imgs/foto-perfil.png" class="img_comentario_fixo">
+            <div class="container_comentario_fixo_interno">
+                <span class="texto_avaliacao_comentario_fixo"> Avaliou conteúdo como: <span>${resposta[contador].nota}</span> estrelas </span>
+                <div type="text" class="nome_comentario">${resposta[contador].nomeC}</div>
+                <div type="text" class="container_conteudo_comentario"> ${resposta[contador].texto}</div>
+            </div>
+            <div style="height: 120px;"></div>
+        </div>
+        `;
+        contador++;
+
+    }
+    if(contador > 2) {
+        document.getElementById('todos_os_comentarios').style.height= "500px";
+    }
+    if(contador > 3){
+        document.getElementById('todos_os_comentarios').style.height= "650px";
+    }
+    if(contador > 4){
+        document.getElementById('todos_os_comentarios').style.height= "700px";
+    }
+    if(contador > 5){
+        document.getElementById('todos_os_comentarios').style.height= "850px";
+    }
+    if(contador > 6){
+        document.getElementById('todos_os_comentarios').style.height= "900px";
+    }
+    if(contador > 8){
+        document.getElementById('todos_os_comentarios').style.height= "950px";
+    }
+        
+
+
+}
+
+
 </script>

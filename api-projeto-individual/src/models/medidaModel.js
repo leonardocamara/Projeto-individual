@@ -1,7 +1,7 @@
 var database = require("../database/config");
 
 
-function buscarMedidasEmTempoReal(idAquario) {
+function buscarMedidasEmTempoReal() {
     instrucaoSql = ` select count(interacao_big) as interacao_big, 
                             count(buracosNegros) as buracosNegros, 
                             count(bigCrunch) as bigCrunch, 
@@ -12,6 +12,15 @@ function buscarMedidasEmTempoReal(idAquario) {
 }
 
 
+function buscarComentariosEmTempoReal() {
+    instrucaoSql = `select * from comentario;`;
+
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+
 module.exports = {
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    buscarComentariosEmTempoReal
 }

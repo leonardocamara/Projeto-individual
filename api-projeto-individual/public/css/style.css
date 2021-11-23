@@ -294,7 +294,7 @@ input::placeholder {
 
 /*comentários publicados*/
 .container_geral_comentarios_publicados{
-    height: 600px; 
+    height: 400px; 
     width: 70%; 
     margin: auto; 
     border-radius: 20px; 
