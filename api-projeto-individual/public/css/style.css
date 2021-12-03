@@ -278,8 +278,8 @@ input::placeholder {
     margin-left: 20px;
 }
 .botao_publicar{
+    width: 100px;
     margin-left: 20%; 
-    width: 100px; 
     background-color: #ff00ff; 
     color: white;
     border-color: white;

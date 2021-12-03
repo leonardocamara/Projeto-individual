@@ -60,7 +60,7 @@
 
         <div onclick="big_bang()" class="div_conteudo1">
             <a class="link_texto_conteudo" href="#id_big_bang" onclick="interacao_big_bang()">
-                <img class="img_escolha_conteudo" src="./imgs/big3.jpg" onclick="interacao_big_bang()"><br>
+                <img class="img_escolha_conteudo" src="./imgs/big3.jpg"><br>
                 Big Bang
             </a>
 
@@ -68,7 +68,7 @@
 
         <div class="div_conteudo" onclick="buraco_negro()">
             <a class="link_texto_conteudo" href="#id_buraco_negro" onclick="interacao_buracos()">
-                <img class="img_escolha_conteudo" src="./imgs/buraco7.jpg" onclick="interacao_buracos()"><br>
+                <img class="img_escolha_conteudo" src="./imgs/buraco7.jpg"><br>
                 Buracos negros
             </a>
 
@@ -76,7 +76,7 @@
 
         <div class="div_conteudo" onclick="multiverso()">
             <a class="link_texto_conteudo" href="#id_multiverso" onclick="interacao_multiversos()">
-                <img class="img_escolha_conteudo" src="./imgs/multi1.jpeg" onclick="interacao_multiversos()"><br>
+                <img class="img_escolha_conteudo" src="./imgs/multi1.jpeg"><br>
                 Multiversos
             </a>
 
@@ -84,7 +84,7 @@
 
         <div class="div_conteudo" onclick="Big_crunch()">
             <a class="link_texto_conteudo" href="#id_big_crunch" onclick="interacao_crunch()">
-                <img class="img_escolha_conteudo" src="./imgs/crunch2.jpg" onclick="interacao_crunch()"><br>
+                <img class="img_escolha_conteudo" src="./imgs/crunch2.jpg"><br>
                 Big Crunch
             </a><br>
 
@@ -405,13 +405,14 @@
 
 
     <!--Divisão para espaçamento-->
-    <div style="height: 100px;" id="id_espacamento"></div>
+    <div style="height: 150px;" id="id_espacamento" ></div>
+   
 
     <!--Espaço para comentários-->
     <div class="container_geral_comentarios" id="id_container_geral_comentarios">
-
-        <div class="container_preenchimento">
-            <img src="./imgs/foto-perfil.png" class="img_perfil_preenchimento" alt="">
+        
+        <div class="container_preenchimento" >
+            <img src="./imgs/foto-perfil.png" class="img_perfil_preenchimento">
             <div class="preenchimento_interno">
                 <input class="input_comentario" type="text" id="id_comentario" placeholder="Nos conte o que achou..."><br><br>
                 <span class="texto_nome">Email: </span><input class="input_nome" id="id_email" type="text">
@@ -425,7 +426,7 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
 
-                    </select> estrelas <button class="botao_publicar" onclick="Comentar_verificando()">Publicar</button> </span>
+                    </select> estrelas <button class="botao_publicar" onclick="Comentar_verificando()">Publicar</button>
                 
             </div>
 
@@ -582,6 +583,7 @@ function interacao_big_bang() {
 
             if (resposta.ok) {
                 console.log("conteudo interativo");
+                verificar_interacao_grafico();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -608,6 +610,7 @@ function interacao_buracos() {
 
             if (resposta.ok) {
                 console.log("conteudo interativo");
+                verificar_interacao_grafico();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -634,6 +637,7 @@ function interacao_multiversos() {
 
             if (resposta.ok) {
                 console.log("conteudo interativo");
+                verificar_interacao_grafico();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
@@ -660,6 +664,7 @@ function interacao_crunch() {
 
             if (resposta.ok) {
                 console.log("conteudo interativo");
+                verificar_interacao_grafico();
             } else {
                 throw ("Houve um erro ao tentar realizar o cadastro!");
             }
