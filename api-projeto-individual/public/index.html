@@ -18,8 +18,6 @@
 
 <body>
 
-
-
     <header>
 
         <img class="img_logo" src="./imgs/logo-branco.png" alt="logo">
@@ -416,7 +414,7 @@
             <img src="./imgs/foto-perfil.png" class="img_perfil_preenchimento" alt="">
             <div class="preenchimento_interno">
                 <input class="input_comentario" type="text" id="id_comentario" placeholder="Nos conte o que achou..."><br><br>
-                <span class="texto_nome">Nome:</span> <input class="input_nome" id="id_nome" type="text">
+                <span class="texto_nome">Email: </span><input class="input_nome" id="id_email" type="text">
                 <span class="texto_classificar"> Classificar conteúdo:
 
                     <select id="id_nota">
@@ -427,7 +425,7 @@
                         <option value="4">4</option>
                         <option value="5">5</option>
 
-                    </select> estrelas <button class="botao_publicar" onclick="comentar()">Publicar</button> </span>
+                    </select> estrelas <button class="botao_publicar" onclick="Comentar_verificando()">Publicar</button> </span>
                 
             </div>
 
@@ -435,6 +433,25 @@
 
         </div>
     </div>
+
+    
+        <div class="container_cadastro2" id="container_cadastro2" style="margin-top: 50px; display: none;" >
+            <div>
+                <img class="imagem_cadastro2" src="./imgs/simb-mensagem.png">
+            
+            
+                <h2 class="texto_cadastro2">Receber conteúdos <br> e novidades </h2>
+            </div>
+
+            <input type="text" class="input_cadastro2" placeholder="Digite seu nome" id="nome_input1"><br>
+            <input type="text" class="input_cadastro2" placeholder="Informe um email" id="email_input1" style="margin-top: 5px;"><br><br>
+
+            <button class="botao_cadastro2" onclick="Cadastrando_outro()">Cadastre-se</button>
+
+        </div>
+
+    
+
     <div id="todos_os_comentarios" class="container_geral_comentarios_publicados">
 
         <!--Comentários dinâmicos-->
@@ -497,9 +514,6 @@
 </html>
 
 <script>
-    var lista_comentarios = [];
-    var lista_nomes = [];
-    var lista_notas = [];
     window.onload = verificar_interacao_grafico();
     window.onload = carregarComentarios();
 
@@ -729,7 +743,8 @@ function Cadastrando() {
                 console.log("resposta: ", resposta);
 
                 if (resposta.ok) {
-                    window.alert("Cadastro realizado com sucesso!!");
+                    alert("Cadastro realizado com sucesso!!");
+                   
                 } else {
                     throw ("Houve um erro ao tentar realizar o cadastro!");
                 }
@@ -745,25 +760,121 @@ function Cadastrando() {
 
     }
 
-function comentar() {
-        if (id_nome.value == "") {
-            alert('Nome deve ser preenchido')
-        }else if (id_comentario.value == "") {
+function Cadastrando_outro() {
+
+if (nome_input1.value == "") {
+    alert('Nome deve ser preenchido')
+} else if (email_input1.value == "") {
+    alert('Email deve ser preenchido')
+} else if (email_input1.value.indexOf("@") == -1 || email_input1.value.indexOf(".") == -1 || email_input1.value.indexOf(" ") != -1) {
+    alert('email incorreto')
+} else {
+
+    var nomeVar = nome_input1.value.toUpperCase();
+    var emailVar = email_input1.value.toLowerCase();
+
+    fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            nome: nomeVar,
+            email: emailVar,
+
+        })
+    }).then(function (resposta) {
+
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            window.alert("Cadastro realizado com sucesso!!");
+            container_cadastro2.style.display = 'none';
+
+            Comentar_verificando();
+
+        } else {
+            throw ("Houve um erro ao tentar realizar o cadastro!");
+        }
+    }).catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+
+    });
+
+    nome_input.value = "";
+    email_input.value = "";
+
+}
+
+}
+
+function Comentar_verificando(){
+
+        var emailVar = id_email.value.toLowerCase();
+       
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (emailVar.value == "") {
+            alert("Email não informado");
+        } else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+            alert("Ops, e-mail inválido! Verifique e tente novamente.");
+        } else {
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email: emailVar,
+
+                })
+        }).then(function (resposta) {
+            console.log("Estou no THEN do autenticar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.idusuario;
+                    
+                    comentar();
+
+                });
+
+            } else {
+                alert('É necessário cadastrar um email para comentar!')
+                container_cadastro2.style.display = 'block';
+
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    
+    }
+}
+
+function comentar() {    
+        if (id_comentario.value == "") {
             alert('Comentário não informado')
         } else if (id_nota.value == "") {
             alert('É necessário classificar o conteúdo')
         } else {
 
-        lista_comentarios.push(id_comentario.value);
-        lista_nomes.push(id_nome.value);
-        lista_notas.push(id_nota.value);
-
-        var varNome = id_nome.value;
+        var varNome = sessionStorage.EMAIL_USUARIO;
         var varComentario = id_comentario.value;
         var varNota = id_nota.value;
+        var Varfkusuario = sessionStorage.ID_USUARIO;
 
         id_comentario.value = "";
-        id_nome.value = "";
+        id_email.value = "";
         id_nota.value = "";
 
         fetch("/usuarios/comentar", {
@@ -772,9 +883,10 @@ function comentar() {
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    nomeC: varNome,
                     comentario: varComentario,
                     nota: varNota,
+                    fk: Varfkusuario,
+
 
                 })
             }).then(function (resposta) {
@@ -784,6 +896,7 @@ function comentar() {
                 if (resposta.ok) {
                     window.alert("Comentário realizado com sucesso!!");
                     carregarComentarios();
+                    sessionStorage.clear();
                 } else {
                     throw ("Houve um erro ao tentar realizar o comentário");
                 }
@@ -828,7 +941,7 @@ function plotarComentarios(resposta, idComentario){
         <img src="./imgs/foto-perfil.png" class="img_comentario_fixo">
             <div class="container_comentario_fixo_interno">
                 <span class="texto_avaliacao_comentario_fixo"> Avaliou conteúdo como: <span>${resposta[contador].nota}</span> estrelas </span>
-                <div type="text" class="nome_comentario">${resposta[contador].nomeC}</div>
+                <div type="text" class="nome_comentario">${resposta[contador].nome}</div>
                 <div type="text" class="container_conteudo_comentario"> ${resposta[contador].texto}</div>
             </div>
             <div style="height: 120px;"></div>
@@ -855,7 +968,9 @@ function plotarComentarios(resposta, idComentario){
     if(contador > 8){
         document.getElementById('todos_os_comentarios').style.height= "950px";
     }
-        
+    if(contador > 10){
+        document.getElementById('todos_os_comentarios').style.height= "1200px";
+    }    
 
 
 }

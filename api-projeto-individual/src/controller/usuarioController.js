@@ -65,7 +65,7 @@ function interacao_big_bang(req, res) {
                 function (erro) {
                     console.log(erro);
                     console.log(
-                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        "\nHouve um erro ao realizar o clique! Erro: ",
                         erro.sqlMessage
                     );
                     res.status(500).json(erro.sqlMessage);
@@ -140,18 +140,18 @@ function interacao_crunch(req, res) {
     
 }
 function comentar(req, res) {
-    var nomeC = req.body.nomeC;
     var comentario = req.body.comentario;
     var nota = req.body.nota;
+    var fk = req.body.fk;
 
-    if (nomeC == undefined) {
-        res.status(400).send("Nome não informado :(");
-    } else if (comentario == undefined) {
+    if (comentario == undefined) {
         res.status(400).send("Comentario não informado :(");
     } else if (nota == undefined) {
         res.status(400).send("Nota não informada :(");
-    }else {
-        usuarioModel.comentar(nomeC, comentario, nota)
+    }else if (fk == undefined) {
+        res.status(400).send("Nota não informada :(");
+    } else {
+        usuarioModel.comentar(comentario, nota, fk)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -169,6 +169,39 @@ function comentar(req, res) {
     }
 }
 
+function autenticar(req, res) {
+    var email = req.body.email;
+    
+
+    if (email == undefined) {
+        res.status(400).send("Seu email está undefined!");
+    } else {
+        usuarioModel.autenticar(email)
+            .then(
+                function (resultado) {
+                    console.log(`\nResultados encontrados: ${resultado.length}`);
+                    console.log(`Resultados: ${JSON.stringify(resultado)}`); // transforma JSON em String
+
+                    if (resultado.length == 1) {
+                        console.log(resultado);
+                        res.json(resultado[0]);
+                    } else if (resultado.length == 0) {
+                        res.status(403).send("Email inválido");
+                    } else {
+                        res.status(403).send("Mais de um usuário com o mesmo email!");
+                    }
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+
+}
+
 module.exports = {
     cadastrar,
     listar,
@@ -177,5 +210,6 @@ module.exports = {
     interacao_buracos,
     interacao_multiversos,
     interacao_crunch,
-    comentar
+    comentar,
+    autenticar
 }

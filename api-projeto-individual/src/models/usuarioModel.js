@@ -9,6 +9,17 @@ function listar() {
     return database.executar(instrucao);
 }
 
+function autenticar(email) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function entrar(): ", email)
+    var instrucao = `
+    select idUsuario as idusuario, nome as nome, email as email from usuario WHERE email = '${email}';
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucao);
+    return database.executar(instrucao);
+}
+
+
+
 function cadastrar(nome, email) {
     console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nome, email);
     var instrucao = `
@@ -53,10 +64,10 @@ function  interacao_crunch(interacao_crunch) {
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
 }
-function comentar(nomeC, texto, nota) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", nomeC, texto, nota);
+function comentar(comentario, nota, fk) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", comentario, nota, fk);
     var instrucao = `
-        INSERT INTO comentario (nomeC, texto, nota) VALUES ('${nomeC}', '${texto}', '${nota}');
+        INSERT INTO comentario (texto, nota, fkusuario) VALUES ('${comentario}', '${nota}', '${fk}');
     `;
     console.log("Executando a instrução SQL: \n" + instrucao);
     return database.executar(instrucao);
@@ -68,6 +79,7 @@ module.exports = {
     interacao_buracos,
     interacao_multiversos,
     interacao_crunch,
-    comentar
+    comentar,
+    autenticar
 
 };

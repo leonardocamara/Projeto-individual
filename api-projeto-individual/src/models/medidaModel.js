@@ -13,7 +13,7 @@ function buscarMedidasEmTempoReal() {
 
 
 function buscarComentariosEmTempoReal() {
-    instrucaoSql = `select * from comentario;`;
+    instrucaoSql = `select texto, nota, nome from usuario join comentario on idUsuario = Fkusuario;`;
 
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
