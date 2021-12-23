@@ -298,14 +298,14 @@ if (nome_input1.value == "") {
 }
 
 function Comentar_verificando(){
-
-        var emailVar = id_email.value.toLowerCase();
        
-
+    
         // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
-        if (emailVar.value == "") {
+        if(id_comentario.value == ""){
+            alert("Comentário não informado")
+        } else if (id_email.value == "") {
             alert("Email não informado");
-        } else if (emailVar.indexOf("@") == -1 || emailVar.indexOf(".com") == -1) {
+        } else if (id_email.value.indexOf("@") == -1 || id_email.value.indexOf(".com") == -1) {
             alert("Ops, e-mail inválido! Verifique e tente novamente.");
         } else {
 
@@ -315,7 +315,7 @@ function Comentar_verificando(){
                     "Content-Type": "application/json"
                 },
                 body: JSON.stringify({
-                    email: emailVar,
+                    email: id_email.value,
 
                 })
         }).then(function (resposta) {
@@ -330,6 +330,8 @@ function Comentar_verificando(){
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
                     sessionStorage.ID_USUARIO = json.idusuario;
+                    container_cadastro2.style.display = 'none';
+
                     
                     comentar();
 
